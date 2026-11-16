@@ -1,0 +1,37 @@
+### Alternativa ao Insomnia (VS Code REST Client / Rider / Visual Studio)
+@base = http://localhost:5080
+
+### Lista ocorrências
+GET {{base}}/api/ocorrencias
+
+### Registra ocorrência (risco Alto gera alerta automático)
+POST {{base}}/api/ocorrencias
+Content-Type: application/json
+
+{
+  "local": "Brooklin",
+  "tipo": "Alagamento",
+  "nivelRisco": "Alto",
+  "descricao": "Acúmulo de água na via"
+}
+
+### Ocorrência por id
+GET {{base}}/api/ocorrencias/1
+
+### Atualiza status
+PATCH {{base}}/api/ocorrencias/1/status
+Content-Type: application/json
+
+{ "status": "Resolvida" }
+
+### Lista alertas
+GET {{base}}/api/alertas
+
+### Cria alerta
+POST {{base}}/api/alertas
+Content-Type: application/json
+
+{
+  "mensagem": "Evite a Marginal Pinheiros: alagamento no sentido Interlagos",
+  "nivelRisco": "Alto"
+}

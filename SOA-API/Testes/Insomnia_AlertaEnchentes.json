@@ -1,0 +1,192 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_source": "alerta.enchentes",
+  "resources": [
+    {
+      "_id": "wrk_brooklin_1",
+      "_type": "workspace",
+      "name": "Alerta Enchentes",
+      "scope": "collection"
+    },
+    {
+      "_id": "env_brooklin_1",
+      "_type": "environment",
+      "parentId": "wrk_brooklin_1",
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:5080"
+      }
+    },
+    {
+      "_id": "fld_brooklin_1",
+      "_type": "request_group",
+      "parentId": "wrk_brooklin_1",
+      "name": "API Alerta Enchentes"
+    },
+    {
+      "_id": "req_brooklin_1",
+      "_type": "request",
+      "parentId": "fld_brooklin_1",
+      "name": "01 - GET ocorrencias (lista)",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/ocorrencias",
+      "headers": [],
+      "parameters": [],
+      "authentication": {}
+    },
+    {
+      "_id": "req_brooklin_2",
+      "_type": "request",
+      "parentId": "fld_brooklin_1",
+      "name": "02 - POST ocorrencia (risco Alto, gera alerta)",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/ocorrencias",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"local\": \"Brooklin\",\n  \"tipo\": \"Alagamento\",\n  \"nivelRisco\": \"Alto\",\n  \"descricao\": \"Acúmulo de água na via\"\n}"
+      }
+    },
+    {
+      "_id": "req_brooklin_3",
+      "_type": "request",
+      "parentId": "fld_brooklin_1",
+      "name": "03 - POST ocorrencia (risco Médio)",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/ocorrencias",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"local\": \"Av. Berrini\",\n  \"tipo\": \"Bueiro entupido\",\n  \"nivelRisco\": \"Médio\",\n  \"descricao\": \"Bueiro entupido com escoamento lento\"\n}"
+      }
+    },
+    {
+      "_id": "req_brooklin_4",
+      "_type": "request",
+      "parentId": "fld_brooklin_1",
+      "name": "04 - GET ocorrencia por id",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/ocorrencias/1",
+      "headers": [],
+      "parameters": [],
+      "authentication": {}
+    },
+    {
+      "_id": "req_brooklin_5",
+      "_type": "request",
+      "parentId": "fld_brooklin_1",
+      "name": "05 - GET ocorrencia inexistente (404)",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/ocorrencias/9999",
+      "headers": [],
+      "parameters": [],
+      "authentication": {}
+    },
+    {
+      "_id": "req_brooklin_6",
+      "_type": "request",
+      "parentId": "fld_brooklin_1",
+      "name": "06 - POST ocorrencia invalida - risco inexistente (400)",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/ocorrencias",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"local\": \"Brooklin\",\n  \"tipo\": \"Alagamento\",\n  \"nivelRisco\": \"Gigante\",\n  \"descricao\": \"Teste de validação\"\n}"
+      }
+    },
+    {
+      "_id": "req_brooklin_7",
+      "_type": "request",
+      "parentId": "fld_brooklin_1",
+      "name": "07 - POST ocorrencia invalida - sem local (400)",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/ocorrencias",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"local\": \"\",\n  \"tipo\": \"Alagamento\",\n  \"nivelRisco\": \"Baixo\",\n  \"descricao\": \"Teste de validação\"\n}"
+      }
+    },
+    {
+      "_id": "req_brooklin_8",
+      "_type": "request",
+      "parentId": "fld_brooklin_1",
+      "name": "08 - PATCH status da ocorrencia",
+      "method": "PATCH",
+      "url": "{{ _.base_url }}/api/ocorrencias/1/status",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"status\": \"Resolvida\"\n}"
+      }
+    },
+    {
+      "_id": "req_brooklin_9",
+      "_type": "request",
+      "parentId": "fld_brooklin_1",
+      "name": "09 - GET alertas",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/alertas",
+      "headers": [],
+      "parameters": [],
+      "authentication": {}
+    },
+    {
+      "_id": "req_brooklin_10",
+      "_type": "request",
+      "parentId": "fld_brooklin_1",
+      "name": "10 - POST alerta",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/alertas",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"mensagem\": \"Evite a Marginal Pinheiros: alagamento no sentido Interlagos\",\n  \"nivelRisco\": \"Alto\"\n}"
+      }
+    }
+  ]
+}
