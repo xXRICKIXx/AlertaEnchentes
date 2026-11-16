@@ -12,7 +12,7 @@
 | **Problema, em uma frase** | Alagamentos no Brooklin dificultam o deslocamento e as atividades locais, e faltam informações rápidas e centralizadas sobre onde e quão grave é cada ocorrência. |
 | **Como funciona** | O usuário registra/consulta ocorrências no app Windows Forms, que consome uma API REST (SOA) que persiste os dados em banco e gera alertas. Ocorrências de risco **Alto** geram alerta automaticamente. |
 | **O que cada parte faz** | **C# Windows Forms:** interface, validação e sugestão de risco. **SOA/API REST:** regras de negócio, persistência (EF Core + migrations) e alertas. |
-| **Link do repositório** | _(preencher)_ |
+| **Link do repositório** | https://github.com/xXRICKIXx/AlertaEnchentes |
 | **Indicador de impacto** | Nº de ocorrências registradas por mês e tempo entre o registro e a emissão do alerta. |
 | **ODS conectados** | **ODS 13** (Ação contra a mudança global do clima) e **ODS 11** (Cidades e comunidades sustentáveis) |
 
