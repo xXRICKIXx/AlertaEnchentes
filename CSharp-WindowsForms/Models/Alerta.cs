@@ -1,6 +1,6 @@
 namespace AlertaEnchentes.Desktop.Models;
 
-
+/// <summary>Alerta devolvido pela API.</summary>
 public class Alerta
 {
     public int Id { get; set; }
@@ -10,7 +10,7 @@ public class Alerta
     public string Status { get; set; } = string.Empty;
 }
 
-
+/// <summary>Dados enviados à API no POST /api/alertas (campos encapsulados).</summary>
 public class NovoAlerta
 {
     public const int MinMensagem = 5;
