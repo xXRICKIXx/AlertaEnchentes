@@ -29,7 +29,24 @@
 ---------------------------------------------------------------------------------------------------
 
 
-> **Pessoa real beneficiada:** _(descreva quem foi entrevistado — ex.: comerciante/morador do Brooklin — e o que ela faz hoje diante de um alagamento. Não inclua dados pessoais reais.)_
+## Pessoa beneficiada
+
+**Marcos, 42 anos, dono de uma pequena loja de conveniência na região do Brooklin, São Paulo.**
+Vai ao trabalho de ônibus e metrô e depende do movimento de clientes para fechar o mês.
+
+**O que ele faz hoje diante de um alagamento**
+- Descobre o problema pelo grupo de WhatsApp do bairro ou ao ver a rua já alagada.
+- Liga para amigos para saber se dá para chegar à loja e se vale abrir.
+- Quando a água entra, improvisa sacos de areia e move a mercadoria para as prateleiras mais altas.
+
+**O que o atrapalha**
+- Não existe um lugar único e confiável para saber **onde** está alagado e **quão grave** é.
+- As informações chegam tarde e misturadas com boatos.
+- Perde vendas e mercadoria por não ter tempo de se preparar.
+
+**O que ele espera da solução**
+Registrar e consultar rapidamente as ocorrências da região e receber um aviso quando o risco for alto,
+para decidir se abre a loja, protege o estoque ou muda o caminho de volta para casa.
 
 ## ODS 13 — como o projeto contribui
 Centraliza informações sobre alagamentos, apoia a comunicação de situações de risco e permite que cidadãos reajam com mais informação a eventos climáticos extremos. A tecnologia não elimina o problema climático, mas amplia a capacidade de adaptação local.
@@ -65,7 +82,7 @@ Pré-requisitos: **.NET 8 SDK** e **Windows** (para o app Windows Forms).
    cd SOA-API
    dotnet run
    ```
-   Sobe em `http://localhost:5080` (Swagger em `/swagger`). O banco `alertaenchentes.db` é criado e as migrations são aplicadas automaticamente.
+   Sobe em `http://localhost:5080` (Swagger em `http://localhost:5080/swagger`). O banco `alertaenchentes.db` é criado e as migrations são aplicadas automaticamente.
 2. **Aplicação desktop** (em outro terminal):
    ```bash
    cd CSharp-WindowsForms
