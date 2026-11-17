@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
@@ -49,9 +49,11 @@ namespace AlertaEnchentes.Api.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(name: "Alertas");
+            migrationBuilder.DropTable(
+                name: "Alertas");
 
-            migrationBuilder.DropTable(name: "Ocorrencias");
+            migrationBuilder.DropTable(
+                name: "Ocorrencias");
         }
     }
 }

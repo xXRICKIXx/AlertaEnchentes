@@ -78,7 +78,19 @@ A migration `InitialCreate` já está no repositório. Para recriar/evoluir:
 ```bash
 dotnet tool install --global dotnet-ef
 cd SOA-API
-dotnet ef migrations add NomeDaMigration
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+
+```
+Aqui você pode apagar o migration e depois de apagar,
+você deve gerar os migrations e atualizar ele no banco de dados
+
+```bash
+cd SOA-API
+Remove-Item -Recurse -Force Migrations
+Remove-Item -Force alertaenchentes.db* -ErrorAction SilentlyContinue
+
+dotnet ef migrations add InitialCreate
 dotnet ef database update
 ```
 
