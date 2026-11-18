@@ -58,7 +58,7 @@ Usuário → Windows Forms (C#) --HTTP/JSON--> API REST (SOA) → Serviços → 
 ```
 
 ```
-AlertaEnchentes
+AquaGuard
 ├── README.md
 ├── CSharp-WindowsForms
 │   ├── Models      (Ocorrencia, Alerta, NivelRisco)
