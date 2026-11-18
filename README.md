@@ -1,4 +1,4 @@
-# 🌧️ AquaGard
+# 🌧️ AquaGuard
 
 **Global Solution 2026.2 — CitizenTech · FIAP · Engenharia de Software (3º ano)**
 
