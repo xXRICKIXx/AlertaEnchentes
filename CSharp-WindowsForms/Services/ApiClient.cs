@@ -16,7 +16,7 @@ public class ApiClient : IDisposable
 
     public ApiClient()
     {
-        var url = Environment.GetEnvironmentVariable("ALERTA_ENCHENTES_API_URL") ?? "http://localhost:5080/";
+        var url = Environment.GetEnvironmentVariable("AQUAGUARD_API_URL") ?? "http://localhost:5080/";
         _http = new HttpClient
         {
             BaseAddress = new Uri(url),

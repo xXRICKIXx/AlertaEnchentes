@@ -14,7 +14,7 @@ public class MainForm : Form
 
     public MainForm()
     {
-        Text = "Alerta Enchentes — Alagamentos no Brooklin, São Paulo";
+        Text = "AquaGuard - Sistema de alerta de enchentes";
         MinimumSize = new Size(900, 560);
         Size = new Size(1100, 640);
         StartPosition = FormStartPosition.CenterScreen;

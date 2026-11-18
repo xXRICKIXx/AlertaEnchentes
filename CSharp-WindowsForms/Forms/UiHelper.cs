@@ -31,9 +31,10 @@ internal static class UiHelper
             if (e.RowIndex < 0) return;
             if (grid.Columns[e.ColumnIndex].DataPropertyName != "NivelRisco") return;
             if (e.Value is not string nivel) return;
+            if (e.CellStyle is not { } estilo) return;
 
-            e.CellStyle.ForeColor = Color.Black;
-            e.CellStyle.BackColor = nivel switch
+            estilo.ForeColor = Color.Black;
+            estilo.BackColor = nivel switch
             {
                 "Alto" => Color.FromArgb(255, 205, 210),
                 "Médio" => Color.FromArgb(255, 236, 179),
