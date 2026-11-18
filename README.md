@@ -1,4 +1,4 @@
-# 🌧️ Alerta Enchentes
+# 🌧️ AquaGard
 
 **Global Solution 2026.2 — CitizenTech · FIAP · Engenharia de Software (3º ano)**
 
@@ -6,7 +6,7 @@
 
 | Campo | Conteúdo |
 |---|---|
-| **Nome da CitizenTech** | Alerta Enchentes |
+| **Nome da CitizenTech** | AquaGuard |
 | **Cidade e bairro** | São Paulo — SP · Brooklin |
 | **Cidadão beneficiado** | Moradores, trabalhadores, população em geral e comerciantes do Brooklin afetados por chuvas intensas |
 | **Problema, em uma frase** | Alagamentos no Brooklin dificultam o deslocamento e as atividades locais, e faltam informações rápidas e centralizadas sobre onde e quão grave é cada ocorrência. |
