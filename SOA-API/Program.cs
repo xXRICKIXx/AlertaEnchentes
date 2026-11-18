@@ -1,6 +1,7 @@
 using AlertaEnchentes.Api.Data;
 using AlertaEnchentes.Api.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +13,15 @@ builder.Services.AddScoped<IOcorrenciaService, OcorrenciaService>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "AGUAGUARD API",
+        Version = "v1",
+        Description = "API REST para registro de ocorrências e alertas de alagamentos."
+    });
+});
 
 var app = builder.Build();
 
