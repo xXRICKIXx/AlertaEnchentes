@@ -8,20 +8,10 @@ public static class NivelRisco
 
     public static readonly string[] Niveis = { Baixo, Medio, Alto };
 
-    private static readonly string[] PalavrasAlto =
-    {
-        "submers", "carro", "veículo", "veiculo", "interdit", "transbord", "enchente",
-        "ilhad", "tomad", "correnteza", "idoso", "criança", "crianca", "energia"
-    };
-
-    private static readonly string[] PalavrasMedio =
-    {
-        "acúmulo", "acumulo", "bueiro", "entupid", "lent", "trânsito", "transito", "calçada", "calcada", "poça", "poca"
-    };
-
     /// <summary>
     /// Identifica o nível de risco provável a partir da descrição digitada.
     /// É apenas uma sugestão: o usuário pode alterar antes de registrar.
+    /// As regras são avaliadas em ordem de prioridade: alto, depois médio.
     /// </summary>
     public static string Sugerir(string? descricao)
     {
@@ -29,8 +19,16 @@ public static class NivelRisco
 
         var texto = descricao.ToLowerInvariant();
 
-        if (PalavrasAlto.Any(texto.Contains)) return Alto;
-        if (PalavrasMedio.Any(texto.Contains)) return Medio;
-        return Baixo;
+        // Polimorfismo: todas as regras são tratadas pela classe-base,
+        // mas cada classe derivada executa sua própria implementação.
+        RegraClassificacaoRisco[] regras =
+        {
+            new RegraRiscoAlto(),
+            new RegraRiscoMedio()
+        };
+
+        var regraAplicavel = regras.FirstOrDefault(regra => regra.Corresponde(texto));
+
+        return regraAplicavel?.Nivel ?? Baixo;
     }
 }
